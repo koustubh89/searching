@@ -8,10 +8,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-// http client in memory is used to intercepts the api calls and apply them to an in-memory data store
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 // Prime ng
-import { InputTextModule, PasswordModule, ButtonModule, MessagesModule, MessageModule, GrowlModule, MenubarModule } from 'primeng/primeng';
+import { InputTextModule, PasswordModule, ButtonModule, MessagesModule, MessageModule, GrowlModule, MenubarModule,
+  AutoCompleteModule} from 'primeng/primeng';
 
 // components
 import { AppComponent } from './app.component';
@@ -41,6 +41,7 @@ import { PipeExamplePipe } from './pipe-example.pipe';
 import { MenuComponent } from './menu/menu.component';
 import { DemoComponent } from './demo/demo.component';
 import { SearchComponent } from './search/search.component';
+import { LookupService } from './lookup.service';
 
 
 @NgModule({
@@ -70,9 +71,10 @@ import { SearchComponent } from './search/search.component';
     MessagesModule,
     MessageModule,
     GrowlModule,
-    MenubarModule
+    MenubarModule,
+    AutoCompleteModule
   ],
-  providers: [AppConstants, HeroService, HeroConstants, AuthGuard, AuthService],
+  providers: [AppConstants, HeroService, HeroConstants, AuthGuard, AuthService, LookupService],
   bootstrap: [AppComponent]
 })
 

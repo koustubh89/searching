@@ -20,7 +20,7 @@ export class AuthService {
 
   usersObservable = Observable.of(AuthModel);
 
-  private isloggedIn: boolean = false;
+  private isloggedIn = false;
   private loggedInUser: AuthModel;
 
   // get all users from an api call and return

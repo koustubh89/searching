@@ -1,5 +1,19 @@
 <app-header></app-header>
 
-<p>
-  search works!
-</p>
+<div class="search-container">
+  <div>Search for your planet: </div>
+  <p-autoComplete [(ngModel)]="searchString" [suggestions]="results" (completeMethod)="search($event)" field="name">
+    <ng-template let-brand pTemplate="item">
+      <div class="ui-helper-clearfix planet-template" style="border-bottom:1px solid #D5D5D5">
+          <div class="clearfix planet-row" style="clear: both; font-size:18px;float:right;margin:10px 10px 0 0" >
+            <span class="planet-name" [ngStyle]="getFontStyle(brand.population)">
+                {{brand.name}}
+            </span>
+            <span class="population">
+                {{brand.population}}      
+            </span>
+          </div>
+      </div>
+    </ng-template>
+  </p-autoComplete>
+</div>

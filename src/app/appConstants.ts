@@ -19,5 +19,6 @@ export class AppConstants extends AppUrls {
     public httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    public getUsersURL = this.baseUrl + 'people';  // URL to web api
+    public getUsersURL = this.baseUrl + 'people';  // URL to web api for people
+    public getPlanetsResults = this.baseUrl + 'planets';  // URL to web api for planets
 }

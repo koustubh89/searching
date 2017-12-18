@@ -17,7 +17,7 @@ export class HeroSearchComponent implements OnInit {
   heroes$: Observable<Hero[]>;
   @Input() inputName: string;
   @Output() notify: EventEmitter<string> = new EventEmitter<string>();
-  
+
   private searchTerms = new Subject<string>();
 
   constructor(private heroService: HeroService) { }

@@ -1,0 +1,29 @@
+.search-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .ui-widget {
+        width: 25rem !important;
+    }
+    .ui-autocomplete {
+        .ui-autocomplete-input {
+            width: auto;
+        }
+    }
+
+    .planet-template {
+        div.planet-row {
+            width: 92%;
+        }
+        .population {
+            font-size: 10px;
+            float: right;
+        }
+        
+        .planet-name {
+            float: left;
+        }
+    }
+}
