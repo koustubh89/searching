@@ -15,15 +15,10 @@ import { InputTextModule, PasswordModule, ButtonModule, MessagesModule, MessageM
 
 // components
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 
 // service
-import { HeroService } from './hero.service';
 import { AuthGuard } from './security/auth-guard.guard';
 import { AuthService } from './security/auth.service';
 
@@ -34,12 +29,10 @@ import { HighlightDirective } from './highlight.directive';
 import { AppRoutingModule } from './app-routing.module';
 
 // classes/constants
-import { HeroConstants } from './heroConstants';
 import { AppConstants } from './appConstants';
 // pipes
 import { PipeExamplePipe } from './pipe-example.pipe';
 import { MenuComponent } from './menu/menu.component';
-import { DemoComponent } from './demo/demo.component';
 import { SearchComponent } from './search/search.component';
 import { LookupService } from './lookup.service';
 
@@ -48,15 +41,7 @@ import { LookupService } from './lookup.service';
   declarations: [
     AppComponent,
     LoginComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    HighlightDirective,
     HeaderComponent,
-    DashboardComponent,
-    HeroSearchComponent,
-    PipeExamplePipe,
-    MenuComponent,
-    DemoComponent,
     SearchComponent
   ],
   imports: [
@@ -74,7 +59,7 @@ import { LookupService } from './lookup.service';
     MenubarModule,
     AutoCompleteModule
   ],
-  providers: [AppConstants, HeroService, HeroConstants, AuthGuard, AuthService, LookupService],
+  providers: [AppConstants, AuthGuard, AuthService, LookupService],
   bootstrap: [AppComponent]
 })
 

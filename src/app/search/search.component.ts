@@ -1,5 +1,4 @@
 import { Component, OnInit, style } from '@angular/core';
-import { HeroService } from '../hero.service';
 import { LookupService } from '../lookup.service';
 
 @Component({
