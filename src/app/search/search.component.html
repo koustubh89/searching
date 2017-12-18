@@ -2,7 +2,7 @@
 
 <div class="search-container">
   <div>Search for your planet: </div>
-  <p-autoComplete [(ngModel)]="searchString" [suggestions]="results" (completeMethod)="search($event)" field="name">
+  <p-autoComplete [(ngModel)]="searchString" [suggestions]="results" (completeMethod)="search($event)" field="name" delay="500">
     <ng-template let-brand pTemplate="item">
       <div class="ui-helper-clearfix planet-template" style="border-bottom:1px solid #D5D5D5">
           <div class="clearfix planet-row" style="clear: both; font-size:18px;float:right;margin:10px 10px 0 0" >
