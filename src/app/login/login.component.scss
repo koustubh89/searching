@@ -1,0 +1,27 @@
+.login-form{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin: 0 auto;
+    .wrapper{
+        label,input,button{
+            float: none;
+            display: inline-flex;
+        }
+    }
+    .btn-wrapper{
+        float: none;
+        display: inline-flex;
+        text-align: center;
+        button{
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    .error{
+        display: block;
+        margin-top: 5px;
+    }
+}
