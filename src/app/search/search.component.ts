@@ -1,27 +1,44 @@
-import { Component, OnInit, style } from '@angular/core';
+import { Component, OnInit, style, ViewEncapsulation } from '@angular/core';
 import { LookupService } from '../lookup.service';
+import { AuthService } from '../security/auth.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class SearchComponent implements OnInit {
 
   searchString: any;
   results: any;
+  count = 0;
+  currentTime = new Date();
+  showIcon = true;
 
-  constructor(private lookupService: LookupService) { }
+  constructor(private lookupService: LookupService, private authService: AuthService) { }
 
   ngOnInit() {
+    setInterval(() => { this.count = 0; }, 60000);
   }
 
   search(event) {
-    this.lookupService.getResults().subscribe(data => {
-      // let planets: any = result;
-      console.log('results', data.results);
-      this.results = data.results;
-    });
+    const specificUserCase = this.authService.isSpecificUser();
+    if (specificUserCase) {
+      this.count++;
+    }
+    if (this.count <= 16) {
+      this.showIcon = false;
+      console.log(this.count);
+      this.lookupService.getResults().subscribe(data => {
+        // let planets: any = result;
+        console.log('results', data.results);
+        this.results = data.results;
+        this.showIcon = true;
+      });
+    } else {
+      console.log('exceeded no of attempts');
+    }
   }
 
   getFontStyle(population: string) {

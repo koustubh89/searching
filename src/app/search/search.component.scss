@@ -7,10 +7,9 @@
     .ui-widget {
         width: 25rem !important;
     }
-    .ui-autocomplete {
-        .ui-autocomplete-input {
-            width: auto;
-        }
+    .search-input-box {
+        border: 10px solid red;
+        width: auto;
     }
     .search-icon {
         position: relative;
@@ -28,6 +27,13 @@
         
         .planet-name {
             float: left;
+        }
+    }
+    p-autocomplete{
+        width:800px;
+       span{
+            display: none;
+            display: inline-block;
         }
     }
 }

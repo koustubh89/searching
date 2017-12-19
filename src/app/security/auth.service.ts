@@ -36,6 +36,17 @@ export class AuthService {
     // );
   }
 
+  // specific user method
+  isSpecificUser() {
+    const user = this.getLoggedInUser();
+    const userNow = user.name;
+    if (userNow === 'Luke Skywalker') {
+      return true;
+    }else {
+      return false;
+    }
+  }
+
   // check user authentication
   isUserAuthenticated(username: string, password: string): Observable<boolean> {
     return this.getAllUsers().map(users => {

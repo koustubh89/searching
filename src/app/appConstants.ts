@@ -12,6 +12,9 @@ export enum RoleAuthenicate {
     SUCCESS = 1,
     ERROR = 2
 }
+export enum SpecificUser {
+    userName = <any>'Luke Skywalker'
+}
 export class AppUrls {
     public baseUrl = 'https://swapi.co/api/';
 }
