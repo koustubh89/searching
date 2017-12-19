@@ -16,35 +16,14 @@ export class HeaderComponent implements OnInit {
   constructor(private authservice: AuthService) { }
 
   ngOnInit() {
-    this.user = 'dummy name';
     this.items = [
       {
-          label: 'File',
-          items: [{
-                  label: 'New',
-                  icon: 'fa-plus',
-                  items: [
-                      {label: 'Project'},
-                      {label: 'Other'},
-                  ]
-              },
-              {label: 'Open'},
-              {label: 'Quit'}
-          ]
-      },
-      {
-          label: 'Edit',
-          icon: 'fa-edit',
-          items: [
-              {label: 'Undo', icon: 'fa-mail-forward'},
-              {label: 'Redo', icon: 'fa-mail-reply'}
-          ]
+          label: 'Star Wars Searching'
       }
     ];
   }
 
   signout() {
-      console.log('sign out now');
       this.authservice.logoutUser();
   }
 }

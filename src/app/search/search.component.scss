@@ -4,16 +4,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    .ui-widget {
-        width: 25rem !important;
-    }
-    .search-input-box {
-        border: 10px solid red;
-        width: auto;
-    }
     .search-icon {
         position: relative;
         left: -25px;   
+    }
+
+    .indicator-text {
+        font-size: 2rem;
+        color: white;
+        margin: 1rem 0;
     }
 
     .planet-template {
@@ -29,11 +28,5 @@
             float: left;
         }
     }
-    p-autocomplete{
-        width:800px;
-       span{
-            display: none;
-            display: inline-block;
-        }
-    }
+
 }
