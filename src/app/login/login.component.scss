@@ -5,13 +5,18 @@
     transform: translate(-50%,-50%);
     text-align: center;
     margin: 0 auto;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 3px 3px 16px 16px #eee;  
+    padding: 5rem 0;
+
     .wrapper{
-        label,input,button{
+        label, input, button {
             float: none;
             display: inline-flex;
         }
     }
-    .btn-wrapper{
+    .btn-wrapper {
         float: none;
         display: inline-flex;
         text-align: center;
