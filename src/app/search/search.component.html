@@ -10,7 +10,7 @@
                 {{brand.name}}
             </span>
             <span class="population">
-                {{brand.population}}      
+                {{brand.population !== 'unknown' ? 'population: around ' + brand.population: 'data not available' }}    
             </span>
           </div>
       </div>

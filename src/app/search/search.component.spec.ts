@@ -19,7 +19,8 @@ describe('SearchComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create a search component', () => {
+    const component = document.querySelectorAll('p-autocomplete');
+    expect(component.length > 0).toBeTruthy();
   });
 });

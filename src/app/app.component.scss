@@ -25,3 +25,20 @@ body .ui-widget {
         width: 25rem;
     }
 }
+
+body .ui-menu.ui-menubar {
+    background-color: transparent;
+    border: transparent;
+    .ui-menuitem-link.ui-corner-all {
+        color: White;
+        font-size: 2rem;
+
+        &:hover {
+            background-color: transparent;    
+        }
+    }
+}
+
+.ui-menuitem.ui-menuitem-custom.ui-widget.ui-corner-all {
+    margin: 1.5rem;
+}
