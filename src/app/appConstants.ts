@@ -12,16 +12,14 @@ export enum RoleAuthenicate {
     SUCCESS = 1,
     ERROR = 2
 }
-export enum SpecificUser {
-    userName = <any>'Luke Skywalker'
-}
 export class AppUrls {
     public baseUrl = 'https://swapi.co/api/';
+    public getUsersURL = this.baseUrl + 'people';  // URL to web api for people
+    public getPlanetsResults = this.baseUrl + 'planets';  // URL to web api for planets
 }
 export class AppConstants extends AppUrls {
     public httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    public getUsersURL = this.baseUrl + 'people';  // URL to web api for people
-    public getPlanetsResults = this.baseUrl + 'planets';  // URL to web api for planets
+    public specificUser = 'Luke Skywalker';
 }

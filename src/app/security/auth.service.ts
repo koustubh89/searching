@@ -26,7 +26,7 @@ export class AuthService {
   // get all users from an api call and return
   getAllUsers(): Observable<any> {
     return this.http
-      .get<any>(this.AppConstants.getUsersURL)
+      .get(this.AppConstants.getUsersURL)
       .pipe(
         tap(response => console.log(`fetched users`, response)),
         catchError(this.handleError(`usersError`, []))
@@ -40,7 +40,7 @@ export class AuthService {
   isSpecificUser() {
     const user = this.getLoggedInUser();
     const userNow = user.name;
-    if (userNow === 'Luke Skywalker') {
+    if (userNow === this.AppConstants.specificUser) {
       return true;
     }else {
       return false;

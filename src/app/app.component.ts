@@ -6,6 +6,7 @@ import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
