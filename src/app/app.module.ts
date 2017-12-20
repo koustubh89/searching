@@ -22,9 +22,6 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './security/auth-guard.guard';
 import { AuthService } from './security/auth.service';
 
-// directive
-import { HighlightDirective } from './highlight.directive';
-
 // Routing Module
 import { AppRoutingModule } from './app-routing.module';
 
@@ -32,7 +29,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppConstants } from './appConstants';
 // pipes
 import { PipeExamplePipe } from './pipe-example.pipe';
-import { MenuComponent } from './menu/menu.component';
 import { SearchComponent } from './search/search.component';
 import { LookupService } from './lookup.service';
 
