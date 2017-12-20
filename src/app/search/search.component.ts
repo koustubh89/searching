@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
   count = 0;
   currentTime = new Date();
   showIcon = true;
+  exceededAttemptsMessage = undefined;
 
   constructor(private lookupService: LookupService, private authService: AuthService) { }
 
@@ -23,7 +24,7 @@ export class SearchComponent implements OnInit {
 
   search(event) {
     const specificUserCase = this.authService.isSpecificUser();
-    if (specificUserCase) {
+    if (!specificUserCase) {
       this.count++;
     }
     if (this.count <= 16) {
@@ -31,9 +32,12 @@ export class SearchComponent implements OnInit {
       this.lookupService.getResults().subscribe(data => {
         this.results = data.results;
         this.showIcon = true;
+        this.exceededAttemptsMessage = undefined;
       });
     } else {
       console.log('exceeded no of attempts');
+      this.results = undefined;
+      this.exceededAttemptsMessage = '* You have exceeded your search attempts';
     }
   }
 
@@ -45,16 +49,22 @@ export class SearchComponent implements OnInit {
     if (populationNow === parseInt(population, 10)) {
       if (populationNow < 10000000) {
         styleClass['font-size'] = '10px';
-      } else if (populationNow >= 10000000 && populationNow < 20000000 ) {
+      } else if (populationNow >= 10000000 && populationNow < 100000000 ) {
         styleClass['font-size'] = '12px';
-      } else if (populationNow >= 20000000 && populationNow < 30000000 ) {
+      } else if (populationNow >= 100000000 && populationNow < 1000000000 ) {
         styleClass['font-size'] = '14px';
-      } else if (populationNow >= 30000000 && populationNow < 40000000 ) {
+      } else if (populationNow >= 1000000000 && populationNow < 10000000000 ) {
         styleClass['font-size'] = '16px';
-      } else if (populationNow >= 40000000 && populationNow < 50000000 ) {
+      } else if (populationNow >= 10000000000 && populationNow < 100000000000 ) {
         styleClass['font-size'] = '18px';
-      } else if (populationNow >= 50000000 && populationNow < 60000000 ) {
+      } else if (populationNow >= 100000000000 && populationNow < 1000000000000 ) {
         styleClass['font-size'] = '20px';
+      } else if (populationNow >= 1000000000000 && populationNow < 10000000000000 ) {
+        styleClass['font-size'] = '22px';
+      } else if (populationNow >= 10000000000000 && populationNow < 100000000000000 ) {
+        styleClass['font-size'] = '24px';
+      } else if (populationNow >= 100000000000000 && populationNow < 1000000000000000 ) {
+        styleClass['font-size'] = '26px';
       }
     } else {
       styleClass['color'] = 'red';

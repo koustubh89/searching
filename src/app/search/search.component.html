@@ -2,6 +2,7 @@
 
 <div class="search-container">
   <div class="indicator-text">Search for your planet: </div>
+  <div class="exceeded-attempts" *ngIf="exceededAttemptsMessage">{{exceededAttemptsMessage}}</div>
   <p-autoComplete [(ngModel)]="searchString" [suggestions]="results" (completeMethod)="search($event)" field="name" delay="500" styleClass="'search-input-box'" (styleClass)="'search-input-box'" [styleClass]="'search-input-box'">
     <ng-template let-brand pTemplate="item">
       <div class="ui-helper-clearfix planet-template" style="border-bottom:1px solid #D5D5D5">

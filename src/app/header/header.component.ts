@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   public user: string;
   public items: MenuItem[];
+  public isUserLoggedIn = false;
 
   constructor(private authservice: AuthService) { }
 
@@ -21,6 +22,9 @@ export class HeaderComponent implements OnInit {
           label: 'Star Wars Searching'
       }
     ];
+    if (this.authservice.isUserLoggedIn()) {
+      this.isUserLoggedIn = true;
+    }
   }
 
   signout() {

@@ -28,5 +28,11 @@
             float: left;
         }
     }
+    .exceeded-attempts {
+        color: red;
+        font-size: 15px;
+        text-align: right;
+        margin-right: 1.5rem;
+    }
 
 }

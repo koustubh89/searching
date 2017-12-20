@@ -1,3 +1,3 @@
 <p-menubar [model]="items">
-    <button pButton label="Logout" icon="fa-sign-out" (click)="signout()"></button>
+    <button pButton label="Logout" icon="fa-sign-out" *ngIf="isUserLoggedIn" class="ui-button-secondary" (click)="signout()"></button>
 </p-menubar>

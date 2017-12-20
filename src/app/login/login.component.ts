@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
         } else {
           this.msgs = [];
           this.msgs.push({ severity: 'error', summary: 'Error Message', detail: 'Invalid Credentials. Try again.' });
-
         }
       }
     );
