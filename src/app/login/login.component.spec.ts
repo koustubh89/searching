@@ -9,10 +9,7 @@ import { Router } from '@angular/router';
 import { HttpHandler } from '@angular/common/http';
 import { Mock } from 'protractor/built/driverProviders';
 import { LoginComponent } from './login.component';
-import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { Message } from 'primeng/primeng';
 
 export class MockClass {
@@ -55,9 +52,6 @@ describe('LoginComponent', () => {
     });
     TestBed.compileComponents();
   }));
-
-  // beforeEach(() => {
-  // });
 
   xit('should create a login form', () => {
     expect(component).toBeTruthy();

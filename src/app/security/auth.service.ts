@@ -28,7 +28,7 @@ export class AuthService {
     return this.http
       .get(this.AppConstants.getUsersURL)
       .pipe(
-        tap(response => console.log(`fetched users`, response)),
+        tap(response => console.log(`fetched users`)),
         catchError(this.handleError(`usersError`, []))
       );
     // return this.http.get(this.AppConstants.getUsersURL).map(response =>

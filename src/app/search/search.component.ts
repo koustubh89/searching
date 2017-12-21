@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   currentTime = new Date();
   showIcon = true;
   exceededAttemptsMessage = undefined;
+  selectedPlanet: any;
 
   constructor(private lookupService: LookupService, private authService: AuthService) { }
 
@@ -70,5 +71,9 @@ export class SearchComponent implements OnInit {
       styleClass['color'] = 'red';
     }
     return styleClass;
+  }
+
+  selected(selection: any) {
+    this.selectedPlanet = selection.name;
   }
 }

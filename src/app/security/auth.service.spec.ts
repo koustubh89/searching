@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class MockClass {
   public logoutUser = () => {};
+  public handler = undefined;
 }
 
 
@@ -19,7 +20,7 @@ describe('AuthService', () => {
   let myRouter: Router;
 
   beforeEach(() => {
-    service = new AuthService( undefined, undefined, undefined);
+    // service = new AuthService( MockClass, AppConstants, Router);
   });
 
   beforeEach(() => {

@@ -3,7 +3,7 @@
 <div class="search-container">
   <div class="indicator-text">Search for your planet: </div>
   <div class="exceeded-attempts" *ngIf="exceededAttemptsMessage">{{exceededAttemptsMessage}}</div>
-  <p-autoComplete [(ngModel)]="searchString" [suggestions]="results" (completeMethod)="search($event)" field="name" delay="500" styleClass="'search-input-box'" (styleClass)="'search-input-box'" [styleClass]="'search-input-box'">
+  <p-autoComplete [(ngModel)]="searchString" [suggestions]="results" (completeMethod)="search($event)" (onSelect)="selected(searchString)" field="name" delay="500" [styleClass]="'search-input-box'">
     <ng-template let-brand pTemplate="item">
       <div class="ui-helper-clearfix planet-template" style="border-bottom:1px solid #D5D5D5">
           <div class="clearfix planet-row" style="clear: both; font-size:18px;float:right;margin:10px 10px 0 0">
@@ -18,4 +18,6 @@
     </ng-template>
   </p-autoComplete>
   <span class="fa fa-search search-icon" *ngIf="showIcon"></span>
+
+  <div class="selected-planet" *ngIf="selectedPlanet">You selected: {{selectedPlanet}} </div>
 </div>
